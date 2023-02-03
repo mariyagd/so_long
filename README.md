@@ -22,5 +22,26 @@ The map is `.ber` file which contains 1, 0, P, C, E. These are characters that i
 - P - player
 - E - exit.
 
-So before you even start your project you should create a function that will verify if your map doesn't have error. As the `.ber`file contains a text, each line is actually ending with a `/n`. So we can you `get_next_line()`function to tranfer each line in a string and verify if each condition of the project is ok and if there are no errors.
+The `.ber`file contains a text, each line is actually ending with a `/n`. So we can use `get_next_line()` function to tranfer each line in a string and verify if each condition of the project is ok and if there are no errors.
+
+```
+int   fd;
+char  *s;
+
+fd = open(map.ber, O_RDONLY);
+s = get_next_line(fd);
+```
+
+Errors would occurs if:
+- the are more or less than 1 argument
+- the file is not a `.ber`extension
+- the file could not be open
+    --> `get_next_line()` returns `NULL`if there is `read` returns a negative value on zero, you need to close the `fd` --> `close(fd)`.
+
+Map conditions:
+- Only one exit
+- Only one player
+- rectangular shaped map
+- At least one collectible
+- 
 
