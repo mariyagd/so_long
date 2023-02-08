@@ -66,7 +66,8 @@ SRCS_PRINTF = 		ft_printf/ft_printf.c \
 					ft_printf/ft_printf_unsint.c \
 					ft_printf/ft_count_unsigned_int.c \
 					ft_printf/ft_printf_address.c \
-					ft_printf/ft_printf_hexa.c
+					ft_printf/ft_printf_hexa.c \
+					ft_printf/ft_printf_fd.c \
 
 SRCS_GNL = 			get_next_line/get_next_line.c \
 					get_next_line/get_next_line_utils.c \

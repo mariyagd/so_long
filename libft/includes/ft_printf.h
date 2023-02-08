@@ -26,4 +26,9 @@ int		ft_count_unsigned_int(unsigned int n);
 void	ft_printf_address(uintptr_t n, int fd, int *count);
 void	ft_printf_hexa(unsigned int n, int fd, int *count, char c);
 
+/*ft_printf_fd*/
+
+void	ft_format_specifier_fd(char format, va_list ap, int *count, int fd);
+int	ft_printf_fd(int fd, const char *last, ...);
+
 #endif
