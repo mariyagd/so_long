@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_map.c                                         :+:      :+:    :+:   */
+/*   ft_lstdel_last_el.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 15:24:16 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/09 16:27:00 by marvin           ###   lausanne.ch       */
+/*   Created: 2023/02/09 10:39:53 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/09 10:39:58 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "map_errors_check/errors.h"
+#include "../includes/libft.h"
 
-int	main(int ac, char **av)
+void	delete_last_el(t_list **a)
 {
-	int		fd;
-	t_list	*head;
+	t_list	*end;
+	t_list	*prev;
 
-	if (ac != 2)
-		error_msg_one(1);
-	extension_check(av[1]);
-	fd = open(av[1], O_RDONLY);
-	open_error_check(fd);
-	head = get_line_into_list(fd);
-	if (!head)
-		error_msg_six(6);
-	prepare_bidimensional_tab(&head);
-	return (0);
+	end = *a;
+	prev = NULL;
+	while (end->next)
+	{
+		prev = end;
+		end = end->next;
+	}
+	prev->next = NULL;
+	free (end);
 }

@@ -6,7 +6,7 @@
 #    By: mdanchev <mdanchev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 12:21:59 by mdanchev          #+#    #+#              #
-#    Updated: 2023/02/02 15:07:32 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/09 12:29:00 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS_LIBFT = 		libft/ft_memset.c \
 					libft/ft_strlen.c \
 					libft/ft_memcmp.c \
 					libft/ft_strlcpy.c \
+					libft/ft_strcpy.c \
 					libft/ft_strlcat.c \
 					libft/ft_strchr.c \
 					libft/ft_strrchr.c \
@@ -46,8 +47,12 @@ SRCS_LIBFT = 		libft/ft_memset.c \
 					libft/max.c \
 					libft/power.c \
 					libft/ft_atoi_base.c \
+					libft/ft_strcspn.c \
+					libft/ft_strspn.c \
+					libft/ft_strpbrk.c \
+					libft/del.c
 
-SRCS_LSTTCHAINE = 	libft/ft_lstnew.c \
+SRCS_LSTCHAINE = 	libft/ft_lstnew.c \
 					libft/ft_lstadd_front.c \
 					libft/ft_lstsize.c \
 					libft/ft_lstlast.c \
@@ -58,6 +63,7 @@ SRCS_LSTTCHAINE = 	libft/ft_lstnew.c \
 					libft/ft_lstmap.c
 
 SRCS_PRINTF = 		ft_printf/ft_printf.c \
+					ft_printf/ft_printf_fd.c \
 					ft_printf/ft_printf_char.c \
 					ft_printf/ft_printf_str.c \
 					ft_printf/ft_printf_int.c \
@@ -66,8 +72,7 @@ SRCS_PRINTF = 		ft_printf/ft_printf.c \
 					ft_printf/ft_printf_unsint.c \
 					ft_printf/ft_count_unsigned_int.c \
 					ft_printf/ft_printf_address.c \
-					ft_printf/ft_printf_hexa.c \
-					ft_printf/ft_printf_fd.c \
+					ft_printf/ft_printf_hexa.c
 
 SRCS_GNL = 			get_next_line/get_next_line.c \
 					get_next_line/get_next_line_utils.c \

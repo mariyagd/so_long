@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   extension_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 17:16:06 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/09 11:52:36 by marvin           ###   lausanne.ch       */
+/*   Created: 2023/02/09 16:15:04 by marvin            #+#    #+#             */
+/*   Updated: 2023/02/09 16:25:14 by marvin           ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/libft.h"
+#include "errors.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	extension_check(char *s)
 {
-	t_list	*temp;
-	t_list	*ptr;
+	char	*s1;
 
-	ptr = *lst;
-	if (!del)
-		return ;
-	while (ptr != NULL)
-	{
-		temp = ptr->next;
-		ft_lstdelone(ptr, del);
-		ptr = temp;
-	}
-	*lst = NULL;
+	s1 = ".ber\0";
+	while (*s && *s != '.')
+		s++;
+	if (*s == '\0')
+		error_msg_one(3);
+	if (ft_strlen(s) != 4)
+		error_msg_one(3);
+	if (ft_strncmp(s, s1, 4) != 0)
+		error_msg_one(3);
 }

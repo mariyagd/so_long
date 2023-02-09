@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:35:31 by mdanchev          #+#    #+#             */
-/*   Updated: 2022/12/21 13:25:30 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/09 12:26:22 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -29,6 +29,6 @@ void	ft_printf_hexa(unsigned int n, int fd, int *count, char c);
 /*ft_printf_fd*/
 
 void	ft_format_specifier_fd(char format, va_list ap, int *count, int fd);
-int	ft_printf_fd(int fd, const char *last, ...);
+int		ft_printf_fd(int fd, const char *last, ...);
 
 #endif
