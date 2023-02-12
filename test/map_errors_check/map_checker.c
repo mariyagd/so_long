@@ -61,23 +61,10 @@ int	find_player_pos_y(char **array)
 	return (-1);
 }
 
-/*
-void	flood_fill(char **array, int p_x, int p_y, int size_x, int size_y)
-{
-	if (p_x > size_x - 1 || p_x < 0 || p_y > size_y - 1 || p_y < 0 || \
-			array[p_y][p_x] == '1' || array[p_y][p_x] == 'E')
-		return ;
-	array[p_y][p_x] = '*';
-	flood_fill(array, p_x - 1, p_y, size_x, size_y);
-	flood_fill(array, p_x + 1, p_y, size_x, size_y);
-	flood_fill(array, p_x, p_y - 1, size_x, size_y);
-	flood_fill(array, p_x, p_y + 1, size_x, size_y);
-}
-*/
-
+#include <stdio.h>
 void	fill(char **tab, t_point size, t_point begin)
 {
-	/*
+	getchar();	
 	int	i = 0;
 	int j = 0;
 	while (tab[i])
@@ -91,11 +78,14 @@ void	fill(char **tab, t_point size, t_point begin)
 		ft_printf("\n");
 		i++;
 	}
-		ft_printf("\n\n\n");*/
-	if (tab[begin.y][begin.x] == 'C' || tab[begin.y][begin.x] == 'P')
+		ft_printf("\n\n\n");
+	if (tab[begin.y][begin.x] == 'C' || \
+			tab[begin.y][begin.x] == 'P')
 		tab[begin.y][begin.x] = '0';
+
 	if (begin.x > size.x - 1 || begin.x < 0 || \
-			begin.y > size.y - 1 || begin.y < 0 || tab[begin.y][begin.x] != '0')
+			begin.y > size.y - 1 || begin.y < 0 || \
+			tab[begin.y][begin.x] != '0')
 			return ;
 	tab[begin.y][begin.x] = '*';
 	fill(tab, size, (t_point){begin.x - 1, begin.y});
