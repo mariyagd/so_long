@@ -20,6 +20,7 @@ void	error_msg_one(int i);
 void	error_msg_six(int i);
 void	error_msg_map_one(int i);
 void	error_msg_map_four(int i);
+void	error_msg_map_seven(int i);
 
 /*CHECK*/
 void	extension_check(char *s);

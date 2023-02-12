@@ -26,9 +26,9 @@ void	errors_malloc_control(int fd, int error, char **str, t_list **head)
 		close(fd);
 		error_msg_six(7);
 	}
-	if (error == 2)
+	else if (error == 2)
 		free(*str);
-	if (error == 3)
+	else if (error == 3)
 	{
 		free(*str);
 		ft_lstclear(head, del);

@@ -95,6 +95,28 @@ void	error_msg_map_four(int i)
 		ft_printf("\033[0;31;7mError.1.12:\033[0m");
 		ft_printf_fd(2, " Map error. Number of collectibles is incorrect.\n");
 	}
+	if (i == 6)
+	{
+		ft_printf("\033[0;31;7mError.1.13:\033[0m");
+		ft_printf_fd(2, " Something went wrong.\n");
+	}
+	ft_printf("\n\033[37;7mExit program failure\033[0m\n");
+	exit(1);
+}
+
+
+void	error_msg_map_seven(int i)
+{
+	if (i == 7)
+	{
+		ft_printf("\033[0;31;7mError.1.14:\033[0m");
+		ft_printf_fd(2, " Map error. Collectibles are not accessible.\n");
+	}
+	if (i == 8)
+	{
+		ft_printf("\033[0;31;7mError.1.15:\033[0m");
+		ft_printf_fd(2, " Map error. Exit is not accessible.\n");
+	}
 	ft_printf("\n\033[37;7mExit program failure\033[0m\n");
 	exit(1);
 }
