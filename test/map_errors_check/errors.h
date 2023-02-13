@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 16:00:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/09 16:20:22 by marvin           ###   lausanne.ch       */
+/*   Updated: 2023/02/13 11:39:00 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
@@ -14,6 +14,12 @@
 
 # include "../../libft/includes/libft.h"
 # include <fcntl.h>
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}		t_point;
 
 /*ERRORS MSG*/
 void	error_msg_one(int i);
@@ -36,6 +42,16 @@ void	nb_player_checker(char **array, t_list **head, int size_x);
 void	nb_exit_checker(char **array, t_list **head, int size_x);
 void	nb_collectible_checker(char **array, t_list **head, int size_x);
 void	elements_checker(char **array, t_list **head, int size_x);
+
+/*ACCESSIBILITY CHECK*/
+void	exit_accessibility_check(char **array, t_list **head, int size_y);
+void	collectible_accessibility_check(char **array, t_list **head, \
+		int size_y);
+void	flood_fill(char **tab, t_point size, t_point begin);
+int		find_player_pos_x(char **array);
+int		find_player_pos_y(char **array);
+void	accessibility_check(char **array, t_list **head, \
+		int size_y, int size_x);
 
 /*CREATE AND FILL TAB2D*/
 void	prepare_bidimensional_tab(t_list **head);

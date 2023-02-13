@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:47:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/09 17:32:15 by marvin           ###   lausanne.ch       */
+/*   Updated: 2023/02/13 10:38:50 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -26,21 +26,21 @@ void	fill_array(char **array, t_list *head)
 	}
 }
 
-char	**malloc_array(int size_x, int size_y)
+char	**malloc_array(int size_y, int size_x)
 {
 	int		i;
 	char	**array;
 
 	i = 0;
-	array = (char **)ft_calloc((size_x + 1), sizeof(char *));
+	array = (char **)ft_calloc((size_y + 1), sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (i < size_x)
+	while (i < size_y)
 	{
-		array[i] = (char *)ft_calloc((size_y + 1), sizeof(char));
+		array[i] = (char *)ft_calloc((size_x + 1), sizeof(char));
 		if (!array[i])
 		{
-			free_array(array, size_x);
+			free_array(array, size_y);
 			return (NULL);
 		}
 		i++;
@@ -48,12 +48,12 @@ char	**malloc_array(int size_x, int size_y)
 	return (array);
 }
 
-char	**create_bidimensional_tab(int size_x, int size_y, t_list **head)
+char	**create_bidimensional_tab(int size_y, int size_x, t_list **head)
 {
 	char	**array;
 
 	array = NULL;
-	array = malloc_array(size_x, size_y);
+	array = malloc_array(size_y, size_x);
 	if (!array)
 	{
 		ft_lstclear(head, del);
@@ -101,20 +101,20 @@ void	prepare_bidimensional_tab(t_list **head)
 	size_x = 0;
 	size_y = 0;
 	ptr = *head;
-	size_y = ft_strlen(ptr->content);
-	while (ptr != NULL && ft_strlen(ptr->content) == size_y)
+	size_x = ft_strlen(ptr->content);
+	while (ptr != NULL && ft_strlen(ptr->content) == size_x)
 	{
-		size_x++;
+		size_y++;
 		ptr = ptr->next;
 	}
-	if (size_x == 1 || size_x == 2|| size_x == size_y || \
-			(ptr != NULL && ft_strlen(ptr->content) != size_y))
+	if (size_y == 1 || size_y == 2 || size_y == size_x || \
+			(ptr != NULL && ft_strlen(ptr->content) != size_x))
 	{
 		ft_lstclear(head, del);
 		error_msg_one(4);
 	}
-	array = create_bidimensional_tab(size_x, size_y, head);
-	map_checker(array, head, size_x, size_y);
+	array = create_bidimensional_tab(size_y, size_x, head);
+	map_checker(array, head, size_y, size_x);
 }
 
 /*TEST SIZE*/

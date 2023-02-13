@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/09 15:52:28 by marvin           ###   lausanne.ch        #
+#    Updated: 2023/02/13 11:30:34 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -34,7 +34,9 @@ SRCS = 			map_errors_check/errors_msg.c \
 				map_errors_check/elements_checker.c \
 				map_errors_check/nbr_elements_checker.c \
 				map_errors_check/map_checker.c \
-				map_errors_check/free_array.c
+				map_errors_check/free_array.c \
+				map_errors_check/accessibility_check.c \
+				map_errors_check/accessibility_check_utils.c
 
 
 OBJS = ${SRCS:.c=.o}

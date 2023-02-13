@@ -6,21 +6,21 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:32 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/09 16:13:54 by marvin           ###   lausanne.ch       */
+/*   Updated: 2023/02/13 10:39:11 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
 
-void	walls_checker(char **array, t_list **head, int size_x, int size_y)
+void	walls_checker(char **array, t_list **head, int size_y, int size_x)
 {
 	int	i;
 
 	i = 0;
-	while (array[0][i] != '\0' && array[size_x - 1][i] != '\0')
+	while (array[0][i] != '\0' && array[size_y - 1][i] != '\0')
 	{
-		if (array[0][i] != '1' || array[size_x - 1][i] != '1')
+		if (array[0][i] != '1' || array[size_y - 1][i] != '1')
 		{
-			free_array(array, size_x);
+			free_array(array, size_y);
 			ft_lstclear(head, del);
 			error_msg_map_one(1);
 		}
@@ -29,9 +29,9 @@ void	walls_checker(char **array, t_list **head, int size_x, int size_y)
 	i = 0;
 	while (array[i])
 	{
-		if (array[i][0] != '1' || array[i][size_y - 1] != '1')
+		if (array[i][0] != '1' || array[i][size_x - 1] != '1')
 		{
-			free_array(array, size_x);
+			free_array(array, size_y);
 			ft_lstclear(head, del);
 			error_msg_map_one(1);
 		}
@@ -39,7 +39,7 @@ void	walls_checker(char **array, t_list **head, int size_x, int size_y)
 	}
 }
 
-void	elements_checker(char **array, t_list **head, int size_x)
+void	elements_checker(char **array, t_list **head, int size_y)
 {
 	int	i;
 	int	j;
@@ -59,7 +59,7 @@ void	elements_checker(char **array, t_list **head, int size_x)
 			}
 			else
 			{
-				free_array(array, size_x);
+				free_array(array, size_y);
 				ft_lstclear(head, del);
 				error_msg_map_one(2);
 			}

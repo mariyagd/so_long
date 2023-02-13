@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:41:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/09 17:41:18 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/13 11:40:18 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h" 
@@ -103,7 +103,6 @@ void	error_msg_map_four(int i)
 	ft_printf("\n\033[37;7mExit program failure\033[0m\n");
 	exit(1);
 }
-
 
 void	error_msg_map_seven(int i)
 {
