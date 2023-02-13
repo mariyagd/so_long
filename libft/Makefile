@@ -6,7 +6,7 @@
 #    By: mdanchev <mdanchev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 12:21:59 by mdanchev          #+#    #+#              #
-#    Updated: 2023/02/09 12:29:00 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/13 14:18:25 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ RM		= rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -c -Iincludes $< -o ${<:.c=.o}
 
 all:	${NAME}
 

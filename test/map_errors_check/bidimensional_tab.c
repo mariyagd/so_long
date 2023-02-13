@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:47:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/13 10:38:50 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/13 16:09:38 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -91,7 +91,7 @@ void	copy_string(char **dst, char *src)
  _______________________
  */
 
-void	prepare_bidimensional_tab(t_list **head)
+char	**prepare_bidimensional_tab(t_list **head)
 {
 	size_t		size_x;
 	size_t		size_y;
@@ -115,6 +115,8 @@ void	prepare_bidimensional_tab(t_list **head)
 	}
 	array = create_bidimensional_tab(size_y, size_x, head);
 	map_checker(array, head, size_y, size_x);
+	ft_lstclear(head, del);
+	return (array);
 }
 
 /*TEST SIZE*/

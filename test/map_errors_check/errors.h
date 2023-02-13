@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 16:00:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/13 11:39:00 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/13 16:09:56 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
@@ -54,7 +54,7 @@ void	accessibility_check(char **array, t_list **head, \
 		int size_y, int size_x);
 
 /*CREATE AND FILL TAB2D*/
-void	prepare_bidimensional_tab(t_list **head);
+char	**prepare_bidimensional_tab(t_list **head);
 void	fill_array(char **array, t_list *head);
 char	**malloc_array(int size_x, int size_y);
 char	**create_bidimensional_tab(int size_x, int size_y, t_list **head);

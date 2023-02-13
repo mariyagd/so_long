@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/13 11:30:34 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/13 16:23:47 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -48,21 +48,26 @@ RM		= rm -f
 CFLAGS = -Wall -Wextra -Werror -g
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -Imlx -Imap_errors_check -c $< -o ${<:.c=.o}
 
 all:	${NAME}
 
 $(NAME):	${OBJS}
 		${MAKE} -C ../libft
+		${MAKE} -C mlx/
 		cp ../libft/libft.a .
-		${CC} ${CFLAGS} -o ${NAME} ${OBJS} libft.a
+		cp mlx/libmlx.dylib .
+		${CC} ${CFLAGS} -o ${NAME} ${OBJS} libft.a libmlx.dylib
 clean:
 		${MAKE} -C ../libft clean
+		${MAKE} -C mlx/ clean
 		${RM} ${OBJS}
 
 fclean:		clean
 		${MAKE} -C ../libft fclean
+		${MAKE} -C mlx/ clean
 		${RM} libft.a
+		${RM} llibmlx.dylib
 		${RM} ${NAME}
 
 re:		fclean all
