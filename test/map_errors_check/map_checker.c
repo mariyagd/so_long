@@ -72,7 +72,15 @@ void	fill(char **tab, t_point size, t_point begin)
 		j = 0;
 		while (tab[i][j])
 		{
-			ft_printf("%c", tab[i][j]);
+			if (i == begin.y && j == begin.x)
+			{
+				ft_printf("\033[0;31;7m");
+				ft_printf("%c", tab[begin.y][begin.x]);
+				ft_printf("\033[0m");
+			}
+
+			else
+				ft_printf("%c", tab[i][j]);
 			j++;
 		}
 		ft_printf("\n");
