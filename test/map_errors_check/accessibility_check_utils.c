@@ -6,40 +6,41 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:26:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/13 11:26:38 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/14 15:43:22 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
 
-void	exit_accessibility_check(char **array, t_list **head, int size_y)
+void	exit_accessibility_check(char **array, char **copy_array, int size_y)
 {
 	int	y;
 	int	x;
 
 	y = 0;
 	x = 0;
-	while (array[y][x] != 'E')
+	while (copy_array[y][x] != 'E')
 	{
 		x++;
-		if (array[y][x] == 0)
+		if (copy_array[y][x] == 0)
 		{
 			x = 0;
 			y++;
 		}
 	}
-	if (array[y + 1][x] == '*' || array[y - 1][x] == '*' || \
-			array[y][x + 1] == '*' || array[y][x + 1] == '*')
+	if (copy_array[y + 1][x] == '*' || copy_array[y - 1][x] == '*' || \
+			copy_array[y][x + 1] == '*' || copy_array[y][x + 1] == '*')
 		return ;
-	else if (!(array[y + 1][x] == '*' || array[y - 1][x] == '*' || \
-		array[y][x + 1] == '*' || array[y][x + 1] == '*'))
+	else if (!(copy_array[y + 1][x] == '*' || copy_array[y - 1][x] == '*' || \
+		copy_array[y][x + 1] == '*' || copy_array[y][x + 1] == '*'))
 	{
 		free_array(array, size_y);
-		ft_lstclear(head, del);
+		free_array(copy_array, size_y);
 		error_msg_map_seven(8);
 	}
 }
 
-void	collectible_accessibility_check(char **array, t_list **head, int size_y)
+void	coll_accessibility_check(char **array, char **copy_array,\
+		int size_y)
 {
 	int	y;
 	int	x;
@@ -48,12 +49,12 @@ void	collectible_accessibility_check(char **array, t_list **head, int size_y)
 	y = 0;
 	x = 0;
 	count = 0;
-	while (array[y] != 0)
+	while (copy_array[y] != 0)
 	{
 		x = 0;
-		while (array[y][x] != 0)
+		while (copy_array[y][x] != 0)
 		{
-			if (array[y][x] == 'C')
+			if (copy_array[y][x] == 'C')
 				count++;
 			x++;
 		}
@@ -62,7 +63,7 @@ void	collectible_accessibility_check(char **array, t_list **head, int size_y)
 	if (count != 0)
 	{
 		free_array(array, size_y);
-		ft_lstclear(head, del);
+		free_array(copy_array, size_y);
 		error_msg_map_seven(7);
 	}
 	return ;

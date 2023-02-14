@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:47:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/13 16:09:38 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/14 16:11:47 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -91,53 +91,47 @@ void	copy_string(char **dst, char *src)
  _______________________
  */
 
+/*
+ * I am creating an array and its copy and I send them in map_checker function.
+ * The copy will be subjected to testing and will undergo modifications \
+ * in flood_fill function. 
+ *
+ * As I want to return the original array intact, I am therefore working \
+ * with a copy. If all error tests pass successfully, I free the copy \
+ * and return the original array.
+ * If there is an error, I free both array and copy_array, and then exit(1).
+ * This is the reason why I put them both in map_checker function - so I
+ * could free them before if there is an error.
+ *
+ * To save a few lines, I am using t_point size, which holds \
+ * the size of **array on the x and y axes
+ * */
+
 char	**prepare_bidimensional_tab(t_list **head)
 {
-	size_t		size_x;
-	size_t		size_y;
+	t_point		size;
 	t_list		*ptr;
 	char		**array;
+	char		**copy_array;
 
-	size_x = 0;
-	size_y = 0;
+	size.x = 0;
+	size.y = 0;
 	ptr = *head;
-	size_x = ft_strlen(ptr->content);
-	while (ptr != NULL && ft_strlen(ptr->content) == size_x)
+	size.x = ft_strlen_int(ptr->content);
+	while (ptr != NULL && ft_strlen_int(ptr->content) == size.x)
 	{
-		size_y++;
+		size.y++;
 		ptr = ptr->next;
 	}
-	if (size_y == 1 || size_y == 2 || size_y == size_x || \
-			(ptr != NULL && ft_strlen(ptr->content) != size_x))
+	if (size.y == 1 || size.y == 2 || size.y == size.x || \
+			(ptr != NULL && ft_strlen_int(ptr->content) != size.x))
 	{
 		ft_lstclear(head, del);
 		error_msg_one(4);
 	}
-	array = create_bidimensional_tab(size_y, size_x, head);
-	map_checker(array, head, size_y, size_x);
+	array = create_bidimensional_tab(size.y, size.x, head);
+	copy_array = create_bidimensional_tab(size.y, size.x, head);
 	ft_lstclear(head, del);
+	map_checker(array, copy_array, size);
 	return (array);
 }
-
-/*TEST SIZE*/
-/*
-ft_printf("size_x = %d\n", size_x);
-ft_printf("size_y = %d\n", size_y);
-*/
-
-/*PRINT ARRAY*/
-/*
-int	i = 0;
-while (array[i])
-{
-	ft_printf("%s\n", array[i]);
-	i++;
-}
-ft_printf("%s\n", array[i]);
-*/
-
-//LEAKS TEST: FREE ARRAY AND FREE LIST
-/*
-ft_lstclear(head, del);
-free_array(array, size_x);
-*/

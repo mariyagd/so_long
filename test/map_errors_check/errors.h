@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 16:00:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/13 16:09:56 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/14 16:01:21 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
@@ -36,22 +36,20 @@ void	open_error_check(int fd);
 void	free_array(char **array, int size_x);
 
 /*MAP ERRORS CHECKER*/
-void	map_checker(char **array, t_list **head, int size_x, int size_y);
-void	walls_checker(char **array, t_list **head, int size_x, int size_y);
-void	nb_player_checker(char **array, t_list **head, int size_x);
-void	nb_exit_checker(char **array, t_list **head, int size_x);
-void	nb_collectible_checker(char **array, t_list **head, int size_x);
-void	elements_checker(char **array, t_list **head, int size_x);
+void	map_checker(char **array, char ** copy_array, t_point size);
+void	walls_checker(char **array,char **copy_array, t_point size);
+void	elements_checker(char **array, char **copy_array, int size_y);
+void	nb_player_checker(char **array, char **copy_array, int size_y);
+void	nb_exit_checker(char **array, char **copy_array, int size_y);
+void	nb_collectible_checker(char **array, char **copy_array, int size_y);
 
 /*ACCESSIBILITY CHECK*/
-void	exit_accessibility_check(char **array, t_list **head, int size_y);
-void	collectible_accessibility_check(char **array, t_list **head, \
-		int size_y);
+void	accessibility_check(char **array, char **copy_array, t_point size);
+void	coll_accessibility_check(char **array, char **copy_array, int size_y);
+void	exit_accessibility_check(char **array, char **copy_array,  int size_y);
 void	flood_fill(char **tab, t_point size, t_point begin);
 int		find_player_pos_x(char **array);
 int		find_player_pos_y(char **array);
-void	accessibility_check(char **array, t_list **head, \
-		int size_y, int size_x);
 
 /*CREATE AND FILL TAB2D*/
 char	**prepare_bidimensional_tab(t_list **head);

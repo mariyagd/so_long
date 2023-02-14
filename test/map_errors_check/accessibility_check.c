@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:23:31 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/13 11:25:34 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/14 15:43:03 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -53,26 +53,23 @@ int	find_player_pos_y(char **array)
 	return (-1);
 }
 
-void	accessibility_check(char **array, t_list **head, int size_y, int size_x)
+void	accessibility_check(char **array, char **copy_array, t_point size)
 {	
 	int			p_x;
 	int			p_y;
 	t_point		begin;
-	t_point		size;
 
 	p_x = find_player_pos_x(array);
 	p_y = find_player_pos_y(array);
 	begin.x = p_x;
 	begin.y = p_y;
-	size.x = size_x;
-	size.y = size_y;
 	if (p_y < 0 || p_x < 0)
 	{
-		free_array(array, size_y);
-		ft_lstclear(head, del);
+		free_array(array, size.y);
+		free_array(copy_array, size.y);
 		error_msg_map_four(6);
 	}
-	flood_fill(array, size, begin);
-	collectible_accessibility_check(array, head, size_y);
-	exit_accessibility_check(array, head, size_y);
+	flood_fill(copy_array, size, begin);
+	coll_accessibility_check(array, copy_array, size.y);
+	exit_accessibility_check(array, copy_array, size.y);
 }

@@ -6,39 +6,122 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:24:16 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/13 17:35:44 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/14 18:41:14 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "map_errors_check/errors.h"
 #include "mlx/mlx.h"
+#include "so_long.h"
 
 typedef struct	s_data 
 {
 	void	*mlx_ptr;
 	void	*mlx_win;
-	void	*img_wall;
-	void	*img_ground;
-	void	*img_coin;
-	void	*img_player;
-	void	*img_exit;
+	void	*wall;
+	void	*open_sp;
+	void	*collect;
+	void	*player;
+	void	*exit;
+	char	**map;
 	int		height;
 	int		width;
 	int		player_pos_x;
 	int		player_pos_y;
-	int		score_max;
-	int		score_current;
-	char	**map_data;
-	void	*wall;
-	void	*exit;
-	void	*collectible;
-	void	*player;
+	int		collect_max;
+	int		collect_current;
+	int		w;
+	int		h;
 }			t_data;
+
+void	init_list_image(t_data *list)
+{
+	list->wall = mlx_xpm_file_to_image(list->mlx_ptr, "sprites/wall.xpm", &list->width, &list->height);
+	(*list).open_sp = mlx_xpm_file_to_image((*list).mlx_ptr, "sprites/grass.xpm", &list->w, &list->h);
+	(*list).collect = mlx_xpm_file_to_image((*list).mlx_ptr, "sprites/wood_stick.xpm", &list->w, &list->h);
+	(*list).player = mlx_xpm_file_to_image((*list).mlx_ptr, "sprites/owl.xpm", &list->w, &list->h);
+	(*list).exit = mlx_xpm_file_to_image((*list).mlx_ptr, "sprites/exit_full.xpm", &list->w, &list->h);
+}
+
+void	init_list_args(t_data *list, char **array)
+{
+	int	y;
+	int	x;
+	int	c;
+
+	y = 0;
+	c = 0;
+	while (array[y])
+	{
+		x = 0;
+		while (array[y][x])
+		{
+			if (array[y][x] == 'C')
+				c++;
+			x++;
+		}
+		y++;
+	}
+	(*list).map = array;
+	(*list).height = y;
+	(*list).width = x;
+	(*list).player_pos_x = find_player_pos_x(array);
+	(*list).player_pos_y = find_player_pos_y(array);
+	(*list).collect_max = c;
+	init_list_image(list);
+}
+
+void	image_window2(t_data *list, char **array)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		j = 0;
+		while (array[i][j] != '\0')
+		{
+			mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->open_sp, j * SPRITE, i * SPRITE);
+			j++;
+		}
+		i++;
+	}
+}
+void	image_window(t_data *list, char **array)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		j = 0;
+		while (array[i][j] != '\0')
+		{
+			mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->open_sp, j * SPRITE, i * SPRITE);
+			if (array[i][j] == '1')
+				mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->wall, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == '0')
+				mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->open_sp, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'C')
+				mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->collect, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'P')
+				mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->player, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'E')
+				mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->exit, j * SPRITE, i * SPRITE);
+			j++;
+		}
+		i++;
+	}
+}
+
 
 int	main(int ac, char **av)
 {
 	int		fd;
 	t_list	*head;
-	t_data	map;
+	t_data	list;
+	char	**array;
 
 	if (ac != 2)
 		error_msg_one(1);
@@ -48,82 +131,58 @@ int	main(int ac, char **av)
 	head = get_line_into_list(fd);
 	if (!head)
 		error_msg_six(6);
-	//map.map_data = prepare_bidimensional_tab(&head);
-	
-	//TESTS
+	array = prepare_bidimensional_tab(&head);
+	list.mlx_ptr = mlx_init();
+	init_list_args(&list, array);	
+	list.mlx_win = mlx_new_window(list.mlx_ptr, list.width * SPRITE , list.height * SPRITE, "so_long");
+	image_window(&list, array);
+	mlx_loop(list.mlx_ptr);
+	/*
+	int		x = 0;
+	int		y = 0;
 
-	map.width = 0;
-	map.height = 0;
-	
-	int	h = 64;
-	int	w = 64;
-
-
-	map.map_data = malloc(5 * sizeof(char *));
-	int	x = 0;
-	int	y = 0;
-	while (y < 4)
-	{
-		map.map_data[y] = malloc(6 * sizeof(char));
-		y++;
-	}
-	y = 0;
-	while (y < 4)
+	while (array[y] != NULL)
 	{
 		x = 0;
-		while (x < 5)
+		while (array[y][x] != '\0')
 		{
-			map.map_data[y][x++] = '0';
-			if (x < 5)
-			{
-				map.map_data[y][x] = '1';
-				x++;
-			}
+			ft_printf("%c", array[y][x]);
+			x++;
 		}
-		map.map_data[y][x] = '0';
+		ft_printf("\n");
 		y++;
-	}
-
-	map.height = 5;
-	map.width = 6;
-
-	while (map.map_data[map.height])
-	{
-		map.width = 0;
-		while (map.map_data[map.height][map.width])
-			map.width++;
-		map.height++;
-	}
-	map.mlx_ptr = mlx_init();
-	map.mlx_win = mlx_new_window(map.mlx_ptr, 1920, 1080, "so_long");
-	map.img_wall = mlx_xpm_file_to_image(map.mlx_ptr, "sprites/wall.xpm", &w, &h);
-	map.img_ground = mlx_xpm_file_to_image(map.mlx_ptr, "sprites/grass.xpm", &w, &h);
-	map.img_coin = mlx_xpm_file_to_image(map.mlx_ptr, "sprites/wood_stick.xpm", &w, &h);
-	map.img_player = mlx_xpm_file_to_image(map.mlx_ptr, "sprites/owl.xpm", &w, &h);
-	map.img_exit = mlx_xpm_file_to_image(map.mlx_ptr, "sprites/exit_full.xpm", &w, &h);
+	}*/
+	/*
+	mlx_ptr = mlx_init();
+	mlx_win = mlx_new_window(mlx_ptr, 1920, 1080, "so_long");
+	img_wall = mlx_xpm_file_to_image(mlx_ptr, "sprites/wall.xpm", &w, &h);
+	img_ground = mlx_xpm_file_to_image(mlx_ptr, "sprites/grass.xpm", &w, &h);
+	img_coin = mlx_xpm_file_to_image(mlx_ptr, "sprites/wood_stick.xpm", &w, &h);
+	img_player = mlx_xpm_file_to_image(mlx_ptr, "sprites/owl.xpm", &w, &h);
+	img_exit = mlx_xpm_file_to_image(mlx_ptr, "sprites/exit_full.xpm", &w, &h);
 
 	int	i = 0;
 	int j = 0;
-	while (map.map_data[i])
+	while (array[i])
 	{
 		j = 0;
-		while (map.map_data[i][j])
+		while (array[i][j])
 		{
-			if (map.map_data[i][j] == '1')
-				mlx_put_image_to_window(map.mlx_ptr, map.mlx_win, map.img_wall, j * 64, i * 64);
-			else if (map.map_data[i][j] == '0')
-				mlx_put_image_to_window(map.mlx_ptr, map.mlx_win, map.img_ground, j * 64, i * 64);
-			else if (map.map_data[i][j] == 'P')
-				mlx_put_image_to_window(map.mlx_ptr, map.mlx_win, map.img_player, j * 64, i * 64);
-			else if (map.map_data[i][j] == 'E')
-				mlx_put_image_to_window(map.mlx_ptr, map.mlx_win, map.img_exit, j * 64, i * 64);
-			else if (map.map_data[i][j] == 'C')
-				mlx_put_image_to_window(map.mlx_ptr, map.mlx_win, map.img_coin, j * 64, i * 64);
+			if (array[i][j] == '1')
+				mlx_put_image_to_window(mlx_ptr, mlx_win, img_wall, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == '0')
+				mlx_put_image_to_window(mlx_ptr, mlx_win, img_ground, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'P')
+				mlx_put_image_to_window(mlx_ptr, mlx_win, img_player, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'E')
+				mlx_put_image_to_window(mlx_ptr, mlx_win, img_exit, j * SPRITE, i * SPRITE);
+			else if (array[i][j] == 'C')
+				mlx_put_image_to_window(mlx_ptr, mlx_win, img_coin, j * SPRITE, i * SPRITE);
 			j++;
 		}
 		i++;
 	}
 
-	mlx_loop(map.mlx_ptr);
+	mlx_loop(mlx_ptr);*/
 	return (0);
 }
