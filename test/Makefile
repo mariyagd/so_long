@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/13 16:23:47 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/15 17:20:32 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -36,12 +36,14 @@ SRCS = 			map_errors_check/errors_msg.c \
 				map_errors_check/map_checker.c \
 				map_errors_check/free_array.c \
 				map_errors_check/accessibility_check.c \
-				map_errors_check/accessibility_check_utils.c
+				map_errors_check/accessibility_check_utils.c \
+				image_to_window.c \
+				init_list.c
 
 
 OBJS = ${SRCS:.c=.o}
 
-NAME = so_long
+NAME 	= so_long
 CC		= gcc
 RM		= rm -f
 
@@ -52,22 +54,21 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 all:	${NAME}
 
-$(NAME):	${OBJS}
+libft/libft.a: 
 		${MAKE} -C ../libft
+
+mlx/libmlx.dylib:
 		${MAKE} -C mlx/
-		cp ../libft/libft.a .
-		cp mlx/libmlx.dylib .
-		${CC} ${CFLAGS} -o ${NAME} ${OBJS} libft.a libmlx.dylib
+
+$(NAME):	${OBJS} mlx/libmlx.dylib libft/libft.a
+		${CC} ${CFLAGS} -o ${NAME} ${OBJS} ../libft/libft.a mlx/libmlx.dylib
 clean:
 		${MAKE} -C ../libft clean
-		${MAKE} -C mlx/ clean
 		${RM} ${OBJS}
 
 fclean:		clean
 		${MAKE} -C ../libft fclean
 		${MAKE} -C mlx/ clean
-		${RM} libft.a
-		${RM} llibmlx.dylib
 		${RM} ${NAME}
 
 re:		fclean all
