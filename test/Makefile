@@ -29,6 +29,8 @@ SRCS = 			map_errors_check/errors_msg.c \
 				image_to_window.c \
 				init_list.c \
 				test_map.c \
+				events.c \
+				expose_hook.c
 
 
 OBJS = ${SRCS:.c=.o}

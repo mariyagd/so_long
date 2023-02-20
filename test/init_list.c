@@ -61,6 +61,9 @@ void	init_list_args(t_data *list)
 	list->width = x;
 	(*list).player_pos_x = find_player_pos_x(list->map);
 	(*list).player_pos_y = find_player_pos_y(list->map);
+	ft_printf("MAX = %d\n", c);
 	(*list).collect_max = c;
+	(*list).collect_current = 0;
+	list->flag_collect = 0;
 	init_list_image(list);
 }

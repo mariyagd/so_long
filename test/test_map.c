@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 #include "so_long.h"
 
-int	funct_ptr(int key, t_list *list)
-{
-	
-}
-
-void	events(t_data *list)
-{
-	mlx_key_hook(list->win_ptr, funct_ptr, list);
-}
+# define 	ARR_UP	126
+# define	W		13
+# define	ARR_DWN	125
+# define	S		1
+# define	ARR_L	123
+# define 	A		0
+# define 	ARR_R	124
+# define	D		2
 
 int	main(int ac, char **av)
 {
