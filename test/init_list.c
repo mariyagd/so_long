@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:07:44 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/15 17:08:12 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/20 15:00:16 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -18,17 +18,27 @@ void	init_list_image(t_data *list)
 
 	list->wall = mlx_xpm_file_to_image(list->mlx_ptr, \
 			"sprites/wall.xpm", &w, &h);
+	if (list->wall == NULL)
+		error_msg_mlx(3, list->map, list->height);
 	(*list).open_sp = mlx_xpm_file_to_image((*list).mlx_ptr, \
 			"sprites/open_sp.xpm", &w, &h);
+	if (list->open_sp == NULL)
+		error_msg_mlx(3, list->map, list->height);
 	(*list).collect = mlx_xpm_file_to_image((*list).mlx_ptr, \
 			"sprites/collect.xpm", &w, &h);
+	if (list->collect == NULL)
+		error_msg_mlx(3, list->map, list->height);
 	(*list).player = mlx_xpm_file_to_image((*list).mlx_ptr, \
 			"sprites/player.xpm", &w, &h);
+	if (list->player == NULL)
+		error_msg_mlx(3, list->map, list->height);
 	(*list).exit = mlx_xpm_file_to_image((*list).mlx_ptr, \
 			"sprites/exit.xpm", &w, &h);
+	if (list->exit == NULL)
+		error_msg_mlx(3, list->map, list->height);
 }
 
-void	init_list_args(t_data *list, char **array)
+void	init_list_args(t_data *list)
 {
 	int	y;
 	int	x;
@@ -36,22 +46,21 @@ void	init_list_args(t_data *list, char **array)
 
 	y = 0;
 	c = 0;
-	while (array[y])
+	while (list->map[y])
 	{
 		x = 0;
-		while (array[y][x])
+		while (list->map[y][x])
 		{
-			if (array[y][x] == 'C')
+			if (list->map[y][x] == 'C')
 				c++;
 			x++;
 		}
 		y++;
 	}
-	(*list).map = array;
 	list->height = y;
 	list->width = x;
-	(*list).player_pos_x = find_player_pos_x(array);
-	(*list).player_pos_y = find_player_pos_y(array);
+	(*list).player_pos_x = find_player_pos_x(list->map);
+	(*list).player_pos_y = find_player_pos_y(list->map);
 	(*list).collect_max = c;
 	init_list_image(list);
 }

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 16:00:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/14 16:01:21 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/20 11:40:35 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
@@ -27,6 +27,7 @@ void	error_msg_six(int i);
 void	error_msg_map_one(int i);
 void	error_msg_map_four(int i);
 void	error_msg_map_seven(int i);
+void	error_msg_mlx(int i, char **map, int size_y);
 
 /*CHECK*/
 void	extension_check(char *s);

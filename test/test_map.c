@@ -6,17 +6,26 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:24:16 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/15 17:21:34 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/20 15:19:13 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
+
+int	funct_ptr(int key, t_list *list)
+{
+	
+}
+
+void	events(t_data *list)
+{
+	mlx_key_hook(list->win_ptr, funct_ptr, list);
+}
 
 int	main(int ac, char **av)
 {
 	int		fd;
 	t_list	*head;
 	t_data	list;
-	char	**array;
 
 	if (ac != 2)
 		error_msg_one(1);
@@ -26,12 +35,17 @@ int	main(int ac, char **av)
 	head = get_line_into_list(fd);
 	if (!head)
 		error_msg_six(6);
-	array = prepare_bidimensional_tab(&head);
+	list.map = prepare_bidimensional_tab(&head);
 	list.mlx_ptr = mlx_init();
-	init_list_args(&list, array);
+	if (list.mlx_ptr == NULL)
+		error_msg_mlx(1, list.map, list.height);
+	init_list_args(&list);
 	list.mlx_win = mlx_new_window(list.mlx_ptr, list.width * SPRITE , \
 			list.height * SPRITE, "so_long");
-	image_window(&list, array);
+	if (list.mlx_win == NULL)
+		error_msg_mlx(2, list.map, list.height);
+	image_window(&list);
+	events(&list);
 	mlx_loop(list.mlx_ptr);
 	return (0);
 }

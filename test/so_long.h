@@ -24,9 +24,9 @@ typedef struct	s_data
 	int		collect_current;
 }			t_data;
 
-void	image_window(t_data *list, char **array);
-void	put_image_to_window(t_data *list, char **array, int	i, int	j);
-void	init_list_args(t_data *list, char **array);
+void	image_window(t_data *list);
+void	put_image_to_window(t_data *list, int i, int j);
+void	init_list_args(t_data *list);
 void	init_list_image(t_data *list);
 
 #endif
