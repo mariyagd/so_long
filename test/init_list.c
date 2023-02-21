@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:07:44 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/20 15:00:16 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/21 16:02:07 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -65,5 +65,6 @@ void	init_list_args(t_data *list)
 	(*list).collect_max = c;
 	(*list).collect_current = 0;
 	list->flag_collect = 0;
+	list->mvt_count = 0;
 	init_list_image(list);
 }

@@ -6,7 +6,7 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:26:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/14 15:43:22 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/21 15:39:30 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -28,10 +28,9 @@ void	exit_accessibility_check(char **array, char **copy_array, int size_y)
 		}
 	}
 	if (copy_array[y + 1][x] == '*' || copy_array[y - 1][x] == '*' || \
-			copy_array[y][x + 1] == '*' || copy_array[y][x + 1] == '*')
+			copy_array[y][x + 1] == '*' || copy_array[y][x - 1] == '*')
 		return ;
-	else if (!(copy_array[y + 1][x] == '*' || copy_array[y - 1][x] == '*' || \
-		copy_array[y][x + 1] == '*' || copy_array[y][x + 1] == '*'))
+	else
 	{
 		free_array(array, size_y);
 		free_array(copy_array, size_y);

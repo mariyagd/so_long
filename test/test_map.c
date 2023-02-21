@@ -6,19 +6,15 @@
 /*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:24:16 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/20 15:19:13 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/21 10:48:42 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
+#include <sys/errno.h>
+#include <stdio.h>
+#include <string.h>
 
-# define 	ARR_UP	126
-# define	W		13
-# define	ARR_DWN	125
-# define	S		1
-# define	ARR_L	123
-# define 	A		0
-# define 	ARR_R	124
-# define	D		2
+extern int	errno;
 
 int	main(int ac, char **av)
 {

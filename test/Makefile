@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/20 14:33:09 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/21 11:39:13 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -30,7 +30,8 @@ SRCS = 			map_errors_check/errors_msg.c \
 				init_list.c \
 				test_map.c \
 				events.c \
-				expose_hook.c
+				expose_hook.c \
+				print_key.c
 
 
 OBJS = ${SRCS:.c=.o}

@@ -4,7 +4,12 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+A	test/so_long.h	/^# define 	A	/;"	d
 AR	hibou/libft/Makefile	/^AR = ar rcs$/;"	m
+ARR_DWN	test/so_long.h	/^# define	ARR_DWN	/;"	d
+ARR_L	test/so_long.h	/^# define	ARR_L	/;"	d
+ARR_R	test/so_long.h	/^# define 	ARR_R	/;"	d
+ARR_UP	test/so_long.h	/^# define 	ARR_UP	/;"	d
 A_KEY	hibou/so_long.h	/^#  define A_KEY	/;"	d
 BG_GREEN	hibou/Makefile	/^BG_GREEN		=		\\033[42m$/;"	m
 BLUE	hibou/Makefile	/^BLUE			=		\\033[0;94m$/;"	m
@@ -34,6 +39,7 @@ CHARG_LINE	hibou/Makefile	/^CHARG_LINE		=		echo "$(BG_GREEN)    $(ENDCOLOR)\\c"$
 CHARG_LINE	hibou/libft/Makefile	/^CHARG_LINE		=		echo "$(BLUE)    $(ENDCOLOR)\\c"$/;"	m
 CHARG_LINE	hibou/mlx/Makefile	/^CHARG_LINE	=	echo "$(BLUE)    $(ENDCOLOR)"$/;"	m
 CLEAN_TXT	hibou/Makefile	/^CLEAN_TXT		=		echo "$(RED)Deleting objects$(ENDCOLOR)"$/;"	m
+D	test/so_long.h	/^# define	D	/;"	d
 DOWN_KEY	hibou/so_long.h	/^#  define DOWN_KEY	/;"	d
 D_KEY	hibou/so_long.h	/^#  define D_KEY	/;"	d
 END	hibou/mlx/Makefile	/^END 		= 	echo "$(BLUE_T)\\nMiniLibX compilation done\\n$(ENDCOLOR)"$/;"	m
@@ -72,6 +78,7 @@ ERR_ZLIB	hibou/mlx/mlx_png.c	/^#define	ERR_ZLIB	/;"	d	file:
 ERR_ZLIB	test/mlx/mlx_png.c	/^#define	ERR_ZLIB	/;"	d	file:
 ESC	hibou/so_long.h	/^#  define ESC	/;"	d
 ESC	hibou/so_long.h	/^#  define ESC /;"	d
+ESC	test/so_long.h	/^# define	ESC	/;"	d
 FCLEAN_TXT	hibou/Makefile	/^FCLEAN_TXT		=		echo "$(RED)Deleting program$(ENDCOLOR)"$/;"	m
 FONT_HEIGHT	hibou/mlx/mlx_int.h	/^#define	FONT_HEIGHT	/;"	d
 FONT_HEIGHT	test/mlx/mlx_int.h	/^#define	FONT_HEIGHT	/;"	d
@@ -152,10 +159,11 @@ RM	hibou/Makefile	/^RM				=		rm -f$/;"	m
 RM	hibou/libft/Makefile	/^RM	= rm -f$/;"	m
 RM	libft/Makefile	/^RM		= rm -f$/;"	m
 RM	test/Makefile	/^RM		= rm -f$/;"	m
+S	test/so_long.h	/^# define	S	/;"	d
 SO_LONG_H	hibou/so_long.h	/^# define SO_LONG_H$/;"	d
 SO_LONG_H	test/so_long.h	/^# define SO_LONG_H$/;"	d
 SPRITE	hibou/so_long.h	/^# define SPRITE	/;"	d
-SPRITE	test/so_long.h	/^# define SPRITE /;"	d
+SPRITE	test/so_long.h	/^# define	SPRITE	/;"	d
 SRC	hibou/Makefile	/^SRC				=		so_long.c \\$/;"	m
 SRC	hibou/mlx-linux/Makefile.mk	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
 SRC	hibou/mlx-linux/test/Makefile.mk	/^SRC = main.c$/;"	m
@@ -177,6 +185,7 @@ UNAME	hibou/mlx-linux/test/Makefile.mk	/^UNAME := $(shell uname)$/;"	m
 UNIQ_BPP	hibou/mlx/mlx_int.h	/^#define UNIQ_BPP	/;"	d
 UNIQ_BPP	test/mlx/mlx_int.h	/^#define UNIQ_BPP	/;"	d
 UP_KEY	hibou/so_long.h	/^#  define UP_KEY	/;"	d
+W	test/so_long.h	/^# define	W	/;"	d
 WARN_SHM_ATTACH	hibou/mlx-linux/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
 WIN1_SX	hibou/mlx-linux/test/main.c	/^#define	WIN1_SX	/;"	d	file:
 WIN1_SY	hibou/mlx-linux/test/main.c	/^#define	WIN1_SY	/;"	d	file:
@@ -198,14 +207,15 @@ bpp3	hibou/mlx-linux/test/main.c	/^int	bpp3;$/;"	v
 bpp4	hibou/mlx-linux/test/main.c	/^int	bpp4;$/;"	v
 buffer	hibou/mlx/mlx_int.h	/^  char			*buffer;$/;"	m	struct:mlx_img_list_s
 buffer	test/mlx/mlx_int.h	/^  char			*buffer;$/;"	m	struct:mlx_img_list_s
-bytes_per_pixel	hibou/mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon2	file:
-bytes_per_pixel	test/mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon1	file:
+bytes_per_pixel	hibou/mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon1	file:
+bytes_per_pixel	test/mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon2	file:
 check2_continue	hibou/error/elements.c	/^int	check2_continue(t_map *map, int player, int exit)$/;"	f
 check_arg	hibou/error/arg.c	/^int	check_arg(int argc, char **argv)$/;"	f
 check_errors	libft/get_next_line/get_next_line.c	/^int	check_errors(int fd, char **line)$/;"	f
 check_extension	hibou/error/arg.c	/^int	check_extension(char **argv, int size_argv)$/;"	f
 check_tab	hibou/error/tab.c	/^void	check_tab(t_map *map)$/;"	f
 clean	hibou/mlx-linux/configure	/^clean(){$/;"	f
+close_program	test/events.c	/^int	close_program(t_data *list)$/;"	f
 close_window	hibou/error/exit.c	/^int	close_window(t_map *map)$/;"	f
 cmap	hibou/mlx-linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar
 col	hibou/mlx-linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col
@@ -280,13 +290,17 @@ error_msg_six	errors_mlx.c	/^void	error_msg_six(int i)$/;"	f
 error_msg_six	test/map_errors_check/errors_msg.c	/^void	error_msg_six(int i)$/;"	f
 error_sprite	hibou/init/img.c	/^void	error_sprite(t_map *map)$/;"	f
 errors_malloc_control	test/map_errors_check/create_list.c	/^void	errors_malloc_control(int fd, int error, char **str, t_list **head)$/;"	f
-events	test/test_map.c	/^void	events(t_data *list)$/;"	f
+events	test/events.c	/^void	events(t_data *list)$/;"	f
 exit	test/so_long.h	/^	void	*exit;$/;"	m	struct:s_data
 exit	test/test_mlx.c	/^	void	*exit;$/;"	m	struct:s_data	file:
 exit_accessibility_check	test/map_errors_check/accessibility_check_utils.c	/^void	exit_accessibility_check(char **array, char **copy_array, int size_y)$/;"	f
 exit_x	hibou/so_long.h	/^	int		exit_x;$/;"	m	struct:s_map
 exit_y	hibou/so_long.h	/^	int		exit_y;$/;"	m	struct:s_map
 expose_hook	hibou/mlx-linux/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list
+expose_hook_down	test/expose_hook.c	/^void	expose_hook_down(t_data *list, int keycode)$/;"	f
+expose_hook_left	test/expose_hook.c	/^void	expose_hook_left(t_data *list, int keycode)$/;"	f
+expose_hook_right	test/expose_hook.c	/^void	expose_hook_right(t_data *list, int keycode)$/;"	f
+expose_hook_up	test/expose_hook.c	/^void	expose_hook_up(t_data *list, int keycode)$/;"	f
 expose_param	hibou/mlx-linux/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list
 expose_win1	hibou/mlx-linux/test/main.c	/^int	expose_win1(void *p)$/;"	f
 expose_win2	hibou/mlx-linux/test/main.c	/^int	expose_win2(void *p)$/;"	f
@@ -295,11 +309,13 @@ fill_array	test/map_errors_check/bidimensional_tab.c	/^void	fill_array(char **ar
 find_player_pos_x	test/map_errors_check/accessibility_check.c	/^int	find_player_pos_x(char **array)$/;"	f
 find_player_pos_y	test/map_errors_check/accessibility_check.c	/^int	find_player_pos_y(char **array)$/;"	f
 finish	hibou/libft/ft_itoa.c	/^char	*finish(int n, int nlen, int neg, char *res)$/;"	f
+flag_collect	test/so_long.h	/^	int		flag_collect;$/;"	m	struct:s_data
+flag_exit	test/so_long.h	/^	int		flag_exit;$/;"	m	struct:s_data
 flood_fill	test/map_errors_check/accessibility_check_utils.c	/^void	flood_fill(char **tab, t_point size, t_point begin)$/;"	f
 font	hibou/mlx/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s
 font	test/mlx/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s
-font_atlas	hibou/mlx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon2	file:
-font_atlas	test/mlx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon1	file:
+font_atlas	hibou/mlx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon1	file:
+font_atlas	test/mlx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon2	file:
 font_fshader	hibou/mlx/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_s
 font_fshader	test/mlx/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_s
 font_program	hibou/mlx/mlx_int.h	/^  GLuint	font_program;$/;"	m	struct:glsl_info_s
@@ -431,7 +447,7 @@ ft_toupper	hibou/libft/ft_toupper.c	/^int	ft_toupper(int str)$/;"	f
 ft_toupper	libft/libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
 func_t	hibou/mlx/mlx_int.h	/^typedef int (*func_t)();$/;"	t
 func_t	test/mlx/mlx_int.h	/^typedef int (*func_t)();$/;"	t
-funct_ptr	test/test_map.c	/^void	funct_ptr(int key, t_data *list)$/;"	f
+funct_ptr	test/events.c	/^int	funct_ptr(int key, t_data *list)$/;"	f
 game	hibou/game/game.c	/^int	game(int key, t_map *map)$/;"	f
 gc	hibou/mlx-linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list
 gc	hibou/mlx-linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img
@@ -450,10 +466,10 @@ gnl_checkline	hibou/libft/get_next_line_utils.c	/^int	gnl_checkline(char *str)$/
 gnl_strjoin	hibou/libft/get_next_line_utils.c	/^char	*gnl_strjoin(char *s1, char *s2)$/;"	f
 gnl_strlen	hibou/libft/get_next_line_utils.c	/^int	gnl_strlen(const char *str)$/;"	f
 height	hibou/mlx-linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img
-height	hibou/mlx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon2	file:
+height	hibou/mlx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon1	file:
 height	hibou/mlx/mlx_int.h	/^  int			height;$/;"	m	struct:mlx_img_list_s
 height	hibou/mlx/mlx_png.c	/^  unsigned int	height;$/;"	m	struct:png_info_s	file:
-height	test/mlx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon1	file:
+height	test/mlx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon2	file:
 height	test/mlx/mlx_int.h	/^  int			height;$/;"	m	struct:mlx_img_list_s
 height	test/mlx/mlx_png.c	/^  unsigned int	height;$/;"	m	struct:png_info_s	file:
 height	test/so_long.h	/^	int		height;$/;"	m	struct:s_data
@@ -502,7 +518,7 @@ init_watch	hibou/init/parsing.c	/^int	init_watch(t_map *map)$/;"	f
 interlace	hibou/mlx/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	file:
 interlace	test/mlx/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	file:
 key_hook	hibou/mlx-linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list
-key_hook	test/test_map.c	/^void	key_hook(int keycode, t_data *list)$/;"	f
+key_hook	test/events.c	/^void	key_hook(int keycode, t_data *list)$/;"	f
 key_param	hibou/mlx-linux/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list
 key_win1	hibou/mlx-linux/test/main.c	/^int	key_win1(int key,void *p)$/;"	f
 key_win2	hibou/mlx-linux/test/main.c	/^int	key_win2(int key,void *p)$/;"	f
@@ -736,6 +752,7 @@ mouse_win1	hibou/mlx-linux/test/main.c	/^int	mouse_win1(int button,int x,int y, 
 mouse_win2	hibou/mlx-linux/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p)$/;"	f
 mouse_win3	hibou/mlx-linux/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f
 move	hibou/game/game.c	/^void	move(t_map *map, int move_y, int move_x)$/;"	f
+mvt_count	test/so_long.h	/^	int		mvt_count;$/;"	m	struct:s_data
 name	hibou/mlx-linux/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name
 name	hibou/mlx-linux/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col
 name	hibou/mlx/mlx_xpm.c	/^  char  *name;$/;"	m	struct:s_col_name	file:
@@ -765,8 +782,8 @@ param	hibou/mlx-linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list
 parse_args	hibou/mlx-linux/configure	/^parse_args(){$/;"	f
 parsing	hibou/init/parsing.c	/^void	parsing(t_map *map)$/;"	f
 pix	hibou/mlx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img
-pixel_data	hibou/mlx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon2	file:
-pixel_data	test/mlx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon1	file:
+pixel_data	hibou/mlx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon1	file:
+pixel_data	test/mlx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon2	file:
 pixel_fshader	hibou/mlx/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s
 pixel_fshader	test/mlx/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s
 pixel_program	hibou/mlx/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s
@@ -790,6 +807,8 @@ pos_y	hibou/so_long.h	/^	int		pos_y;$/;"	m	struct:s_map
 power	libft/libft/power.c	/^int	power(int str_base, int power)$/;"	f
 prepare_bidimensional_tab	test/map_errors_check/bidimensional_tab.c	/^char	**prepare_bidimensional_tab(t_list **head)$/;"	f
 prepare_forstash	libft/get_next_line/get_next_line_utils.c	/^void	prepare_forstash(char **line, char **buffer)$/;"	f
+prepare_to_exit	test/events.c	/^void	prepare_to_exit(int keycode, t_data *list)$/;"	f
+print_key	test/print_key.c	/^void	print_key(int keycode, int mvt_count)$/;"	f
 private_cmap	hibou/mlx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar
 pshm_format	hibou/mlx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar
 push_img	hibou/init/img.c	/^void	push_img(t_map *map, int x, int y, void *img)$/;"	f
@@ -864,10 +883,10 @@ walls_checker	test/map_errors_check/elements_checker.c	/^void	walls_checker(char
 watch	hibou/init/parsing.c	/^int	watch(t_map *map)$/;"	f
 watch_e	hibou/init/parsing2.c	/^void	watch_e(t_map *map)$/;"	f
 width	hibou/mlx-linux/mlx_int.h	/^	int				width;$/;"	m	struct:s_img
-width	hibou/mlx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon2	file:
+width	hibou/mlx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon1	file:
 width	hibou/mlx/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s
 width	hibou/mlx/mlx_png.c	/^  unsigned int	width;$/;"	m	struct:png_info_s	file:
-width	test/mlx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon1	file:
+width	test/mlx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon2	file:
 width	test/mlx/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s
 width	test/mlx/mlx_png.c	/^  unsigned int	width;$/;"	m	struct:png_info_s	file:
 width	test/so_long.h	/^	int		width;$/;"	m	struct:s_data
