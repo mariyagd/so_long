@@ -1,20 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_map.c                                         :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 15:24:16 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/21 10:48:42 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:50:24 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 12:50:26 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
-#include <sys/errno.h>
-#include <stdio.h>
-#include <string.h>
-
-extern int	errno;
 
 int	main(int ac, char **av)
 {
@@ -35,7 +30,7 @@ int	main(int ac, char **av)
 	if (list.mlx_ptr == NULL)
 		error_msg_mlx(1, list.map, list.height);
 	init_list_args(&list);
-	list.mlx_win = mlx_new_window(list.mlx_ptr, list.width * SPRITE , \
+	list.mlx_win = mlx_new_window(list.mlx_ptr, list.width * SPRITE, \
 			list.height * SPRITE, "so_long");
 	if (list.mlx_win == NULL)
 		error_msg_mlx(2, list.map, list.height);

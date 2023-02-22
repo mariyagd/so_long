@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   elements_checker.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:58:32 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/14 16:02:09 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 13:10:44 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:10:47 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"

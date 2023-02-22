@@ -3,20 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   errors_msg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:41:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/20 15:00:55 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 13:11:05 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:11:22 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h" 
-
-/*
- * Je peux inserer error N.4  (i == 4)
-	{
-		ft_printf("\033[0;31;7mError.0.04:\033[0m");
-		ft_printf_fd(2, " Shape error.\n");
-	}*/
 
 void	error_msg_one(int i)
 {

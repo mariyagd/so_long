@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   accessibility_check_utils.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 11:26:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/21 15:39:30 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:52:15 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 12:52:38 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"
@@ -38,8 +38,7 @@ void	exit_accessibility_check(char **array, char **copy_array, int size_y)
 	}
 }
 
-void	coll_accessibility_check(char **array, char **copy_array,\
-		int size_y)
+void	coll_accessibility_check(char **array, char **copy_array, int size_y)
 {
 	int	y;
 	int	x;

@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/21 11:39:13 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/22 12:38:29 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -28,7 +28,7 @@ SRCS = 			map_errors_check/errors_msg.c \
 				map_errors_check/accessibility_check_utils.c \
 				image_to_window.c \
 				init_list.c \
-				test_map.c \
+				so_long.c \
 				events.c \
 				expose_hook.c \
 				print_key.c
@@ -43,7 +43,7 @@ RM		= rm -f
 CFLAGS = -Wall -Wextra -Werror -g
 
 .c.o:
-		${CC} ${CFLAGS} -Imlx -Imap_errors_check -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -Imlx -Imap_errors_check -c  $< -o ${<:.c=.o}
 
 all:	${NAME}
 

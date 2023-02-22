@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bidimensional_tab.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:47:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/14 16:11:47 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:53:09 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 12:53:12 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   expose_hook.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/22 12:11:58 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 14:15:13 by mdanchev         ###   lausanne.ch       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "so_long.h"
 
 void	expose_hook_up(t_data *list, int keycode)
@@ -36,7 +47,7 @@ void	expose_hook_down(t_data *list, int keycode)
 	mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->open_sp, \
 			list->player_pos_x * SPRITE, list->player_pos_y * SPRITE);
 	mlx_put_image_to_window(list->mlx_ptr, list->mlx_win, list->player, \
-			list->player_pos_x * SPRITE, (list->player_pos_y + 1)* SPRITE);
+			list->player_pos_x * SPRITE, (list->player_pos_y + 1) * SPRITE);
 	list->mvt_count += 1;
 	print_key(keycode, list->mvt_count);
 	if (list->flag_exit == 1)

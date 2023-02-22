@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   init_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:07:44 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/21 16:02:07 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:32:34 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 12:33:27 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "so_long.h"
 
 void	init_list_image(t_data *list)
@@ -38,7 +39,7 @@ void	init_list_image(t_data *list)
 		error_msg_mlx(3, list->map, list->height);
 }
 
-void	init_list_args(t_data *list)
+void	init_list_map_params(t_data *list)
 {
 	int	y;
 	int	x;
@@ -61,10 +62,15 @@ void	init_list_args(t_data *list)
 	list->width = x;
 	(*list).player_pos_x = find_player_pos_x(list->map);
 	(*list).player_pos_y = find_player_pos_y(list->map);
-	ft_printf("MAX = %d\n", c);
 	(*list).collect_max = c;
 	(*list).collect_current = 0;
+}
+
+void	init_list_args(t_data *list)
+{
 	list->flag_collect = 0;
+	list->flag_exit = 0;
 	list->mvt_count = 0;
+	init_list_map_params(list);
 	init_list_image(list);
 }

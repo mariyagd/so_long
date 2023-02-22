@@ -3,20 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   errors_msg_mlx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:41:07 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/20 14:32:39 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 13:11:56 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:11:59 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h" 
-
-/*
- * Je peux inserer error N.4  (i == 4)
-	{
-		ft_printf("\033[0;31;7mError.0.04:\033[0m");
-		ft_printf_fd(2, " Shape error.\n");
-	}*/
 
 void	error_msg_mlx(int i, char **map, int size_y)
 {

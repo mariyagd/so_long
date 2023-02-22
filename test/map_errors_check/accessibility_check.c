@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   accessibility_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 11:23:31 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/14 15:43:03 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:51:42 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 14:15:17 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 16:00:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/20 11:40:35 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:51:26 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:22:20 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
@@ -37,8 +37,8 @@ void	open_error_check(int fd);
 void	free_array(char **array, int size_x);
 
 /*MAP ERRORS CHECKER*/
-void	map_checker(char **array, char ** copy_array, t_point size);
-void	walls_checker(char **array,char **copy_array, t_point size);
+void	map_checker(char **array, char **copy_array, t_point size);
+void	walls_checker(char **array, char **copy_array, t_point size);
 void	elements_checker(char **array, char **copy_array, int size_y);
 void	nb_player_checker(char **array, char **copy_array, int size_y);
 void	nb_exit_checker(char **array, char **copy_array, int size_y);
@@ -47,7 +47,7 @@ void	nb_collectible_checker(char **array, char **copy_array, int size_y);
 /*ACCESSIBILITY CHECK*/
 void	accessibility_check(char **array, char **copy_array, t_point size);
 void	coll_accessibility_check(char **array, char **copy_array, int size_y);
-void	exit_accessibility_check(char **array, char **copy_array,  int size_y);
+void	exit_accessibility_check(char **array, char **copy_array, int size_y);
 void	flood_fill(char **tab, t_point size, t_point begin);
 int		find_player_pos_x(char **array);
 int		find_player_pos_y(char **array);
@@ -59,9 +59,9 @@ char	**malloc_array(int size_x, int size_y);
 char	**create_bidimensional_tab(int size_x, int size_y, t_list **head);
 void	copy_string(char **dst, char *src);
 
-/*MAP CHECKER*/
-
 /*LINKED LIST*/
 t_list	*get_line_into_list(int fd);
+void	creat_linked_list(t_list **node, t_list **head, char **str, int fd);
 void	errors_malloc_control(int fd, int error, char **str, t_list **head);
+
 #endif

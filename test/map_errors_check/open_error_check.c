@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_error_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 16:26:17 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/09 16:26:23 by marvin           ###   lausanne.ch       */
+/*   Created: 2023/02/22 13:16:28 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:16:31 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"

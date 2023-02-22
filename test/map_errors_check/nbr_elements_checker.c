@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nbr_elements_checker.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 16:25:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/14 15:32:12 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 13:16:04 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 13:16:07 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "errors.h"

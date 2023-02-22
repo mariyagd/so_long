@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   image_to_window.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdanchev <mdanchev@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:07:02 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/20 09:54:18 by mdanchev         ###   lausanne.ch       */
+/*   Created: 2023/02/22 12:30:37 by mdanchev          #+#    #+#             */
+/*   Updated: 2023/02/22 12:31:21 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
 
-void	put_image_to_window(t_data *list,int i, int	j)
+void	put_image_to_window(t_data *list, int i, int j)
 {
 	while (list->map[++i] != NULL)
 	{
