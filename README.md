@@ -237,8 +237,9 @@ void    init_list_image(t_data *list)
     list->exit = mlx_xpm_file_to_image(list->mlx_ptr, "sprites/exit.xpm", &w, &h);
 }
 ```
-
 </details>
+
+<details><summary>
 
 #### 3.6. Errors management of `mlx_xpm_file_to_image()`
 
