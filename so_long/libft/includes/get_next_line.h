@@ -9,6 +9,7 @@
 /*   Updated: 2023/01/13 13:38:29 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 

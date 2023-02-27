@@ -6,13 +6,14 @@
 /*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:51:26 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/22 13:22:20 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/27 09:57:39 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ERRORS_H
 # define ERRORS_H
 
-# include "../../libft/includes/libft.h"
+//# include "../libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # include <fcntl.h>
 
 typedef struct s_point

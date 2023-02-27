@@ -6,7 +6,7 @@
 #    By: marvin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:57:24 by marvin            #+#    #+#              #
-#    Updated: 2023/02/22 12:38:29 by mdanchev         ###   lausanne.ch        #
+#    Updated: 2023/02/22 14:47:50 by mdanchev         ###   lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 # LEAKS Checking:
@@ -43,25 +43,25 @@ RM		= rm -f
 CFLAGS = -Wall -Wextra -Werror -g
 
 .c.o:
-		${CC} ${CFLAGS} -Imlx -Imap_errors_check -c  $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -Ilibft/includes -Imlx -Imap_errors_check -c  $< -o ${<:.c=.o}
 
 all:	${NAME}
 
 libft/libft.a: 
-		${MAKE} -C ../libft
+		${MAKE} -C libft/
 
 mlx/libmlx.a:
 		${MAKE} -C mlx/
 
 ${NAME}:	${OBJS} mlx/libmlx.a libft/libft.a
-		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -lz -o ${NAME} ${OBJS} ../libft/libft.a mlx/libmlx.a
+		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -lz -o ${NAME} ${OBJS} mlx/libmlx.a libft/libft.a
 clean:
-		${MAKE} -C ../libft clean
+		${MAKE} -C libft/ clean
 		${RM} ${OBJS}
 		${RM} mlx/*.o
 
 fclean:		clean
-		${MAKE} -C ../libft fclean
+		${MAKE} -C libft/ fclean
 		${MAKE} -C mlx/ clean
 		${RM} ${NAME}
 

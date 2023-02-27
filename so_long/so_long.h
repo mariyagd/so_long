@@ -6,14 +6,14 @@
 /*   By: mdanchev <mdanchev@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:17:59 by mdanchev          #+#    #+#             */
-/*   Updated: 2023/02/22 13:20:03 by mdanchev         ###   lausanne.ch       */
+/*   Updated: 2023/02/22 14:48:36 by mdanchev         ###   lausanne.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "map_errors_check/errors.h"
-# include "mlx/mlx.h"
+# include "errors.h"
+# include "mlx.h"
 
 # define SPRITE		64
 # define ARR_UP		126
