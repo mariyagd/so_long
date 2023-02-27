@@ -32,6 +32,8 @@ void	prepare_to_exit(int keycode, t_data *list)
 	if ((keycode == ARR_R || keycode == D) && \
 			list->map[list->player_pos_y][list->player_pos_x + 1] != '1')
 		expose_hook_right(list, keycode);
+	else if (keycode == ESC)
+		close_program(list);
 }
 
 void	key_hook(int keycode, t_data *list)
