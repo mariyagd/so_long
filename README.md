@@ -24,7 +24,7 @@ The map is `.ber` file which contains 1, 0, P, C, E. These are characters that i
 - P - player
 - E - exit.
 
-The `.ber`file contains a text, each line is actually ending with a `/n`. So we can use `get_next_line()` function to tranfer each line in a string and verify if each condition of the project is ok and if there are no errors.
+The `.ber`file contains a text, each line is actually ending with a `/n`. So we can use `get_next_line()` function to transfer each line in a string and verify if each condition of the project is ok and if there are no errors.
 
 ```
 int   fd;
@@ -35,15 +35,14 @@ s = get_next_line(fd);
 ```
 
 Errors would occurs if:
-- the are more or less than 1 argument
+- there are more or less than 1 argument
 - the file is not a `.ber`extension
 - the file could not be open
-    --> `get_next_line()` returns `NULL`if there is `read` returns a negative value on zero, you need to close the `fd` --> `close(fd)`.
 
 Map conditions:
 - Only one exit
 - Only one player
-- rectangular shaped map
+- Rectangular shaped map
 - At least one collectible
  
 </details>
@@ -101,7 +100,7 @@ ${NAME}:    ${OBJS} mlx/libmlx.a libft/libft.a
 
 <details><summary>
 
-#### 3.2. Initialize the connection between your software and the  display.
+#### 3.2. Initialize the connection between your software and the display.
 
 </summary>
 
@@ -111,8 +110,9 @@ Once  this  connection  is established, you'll be able to use other MiniLibX fun
 ```c
        #include <mlx.h>
 
-       void *
-       mlx_init ();
+       void *mlx_ptr;
+    
+       mlx_ptr = mlx_init ();
 ```
 </details>
 
@@ -136,7 +136,7 @@ If mlx_init() fails to set up the connection to the display, it will return NULL
 </summary>
 
 ---
-`  void     *mlx_new_window ( void *mlx_ptr, int size_x, int size_y, char *title );`
+`  void     *mlx_new_window (void *mlx_ptr, int size_x, int size_y, char *title );`
 
 This function creates a new window to the screen and return a `void *` identifier that can be used from othe MiniLibX calls.
 
@@ -160,11 +160,12 @@ For example if your map has `size_x = 14` and `size_y = 7` as shown below and al
 ```c
 #include "mlx.h"
 
-t_data  list;
+void    *mlx_ptr;
+void    *win_ptr;
 
-list.mlx_ptr = init_mlx();
-list.win_ptr = mlx_new_window(list.mlx_ptr, 14 * 64, 7 * 64, "so_long")
-mlx_loop(list.mlx_ptr);
+mlx_ptr = init_mlx();
+win_ptr = mlx_new_window(mlx_ptr, 14 * 64, 7 * 64, "so_long")
+mlx_loop(mlx_ptr);
 ```
 
 The result is a window with the size of the map considering the size of each image:
@@ -237,8 +238,9 @@ void    init_list_image(t_data *list)
     list->exit = mlx_xpm_file_to_image(list->mlx_ptr, "sprites/exit.xpm", &w, &h);
 }
 ```
-
 </details>
+
+<details><summary>
 
 #### 3.6. Errors management of `mlx_xpm_file_to_image()`
 
